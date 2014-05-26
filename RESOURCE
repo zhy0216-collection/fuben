@@ -1,0 +1,13 @@
+Libs:
+    * [south](http://south.readthedocs.org/en/latest/tutorial/part1.html) => schema migration
+    * [extension](http://django-extensions.readthedocs.org/en/latest/command_extensions.html) => lots of feature
+
+
+UI:
+    * [arkui](https://github.com/zhy0216/arkui)
+
+
+comic:
+    * [http://manhua.dmzj.com/tags/fubenshenxing.shtml](http://manhua.dmzj.com/tags/fubenshenxing.shtml)
+
+
