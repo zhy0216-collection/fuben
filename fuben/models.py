@@ -33,8 +33,8 @@ class ComicBook(models.Model):
     name                        = models.CharField(max_length=10)
     series                      = models.CharField(max_length=10)
     finished                    = models.BooleanField(default=False)
-    last_volume                 = models.ForeignKey("ComicVolume", blank=True)
-    volume_count                = models.IntegerField()
+    last_volume                 = models.CharField(max_length=10)
+    volume_count                = models.IntegerField(default=0)
     des                         = models.TextField()
     
     original_cover_url          = models.CharField(max_length=120)
@@ -54,7 +54,7 @@ class ComicVolume(models.Model):
     index                       = models.IntegerField() # from 1
     special_series              = models.CharField(max_length=10, default="")
     comic_book                  = models.ForeignKey("ComicBook")
-    total_pages                 = models.IntegerField()
+    total_pages                 = models.IntegerField(default=0)
     original_link               = models.CharField(max_length=120) 
 
 

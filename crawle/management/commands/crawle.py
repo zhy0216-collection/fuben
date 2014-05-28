@@ -7,7 +7,7 @@ class Command(BaseCommand):
     help = "crawle comic"
 
     def handle(self, *args, **options):
-        pass
+        crawle_comic_book()
 
 
 base_url = "http://manhua.dmzj.com"
@@ -23,11 +23,13 @@ def crawle_comic_book():
         original_link = base_url + pq(div).find("a").attr("href")
         if original_link in sources:
             continue
-        name = pq(div).find("p").html()
+        name = pq(div).find("p.t").text()
+        last_volume = pq(div).find("p.d").text()
         if u"[完]" in name:
             name = name[:-3]
             info["finished"] = True
         info["name"] = name
+        info["last_volume"] = last_volume
         info["original_link"] = original_link
         info["original_cover_url"] = base_url + pq(div).find("img").attr("src")
 
