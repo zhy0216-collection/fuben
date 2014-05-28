@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import datetime
 
 from django.db import models
@@ -31,7 +33,8 @@ class ComicBook(models.Model):
     name                        = models.CharField(max_length=10)
     series                      = models.CharField(max_length=10)
     finished                    = models.BooleanField(default=False)
-    last_volume                 = models.ForeignKey("ComicVolume")
+    last_volume                 = models.ForeignKey("ComicVolume", blank=True)
+    volume_count                = models.IntegerField()
     des                         = models.TextField()
     
     original_cover_url          = models.CharField(max_length=120)
@@ -48,14 +51,14 @@ class ComicBook(models.Model):
 
 class ComicVolume(models.Model):
 
-    name                        = models.CharField(max_length=10)
-    index                       = models.IntegerField()
+    index                       = models.IntegerField() # from 1
     special_series              = models.CharField(max_length=10, default="")
     comic_book                  = models.ForeignKey("ComicBook")
     total_pages                 = models.IntegerField()
+    original_link               = models.CharField(max_length=120) 
 
 
-class ComicPage(model.Model):
+class ComicPage(models.Model):
     volume                      = models.ForeignKey("ComicVolume")
     page_number                 = models.IntegerField(default=1)
 

@@ -36,7 +36,15 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crawle',
+    'fuben',
 )
+
+if DEBUG:
+    INSTALLED_APPS += (
+        'django_extensions',
+    )
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
