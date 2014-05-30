@@ -3,9 +3,12 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.template import RequestContext, loader
 from django.utils import timezone
-# Create your views here.
 
+
+from .models import ComicBook
 
 def index(request):
-    
-    return render(request, 'test.html', {})
+    context = {}
+    comic_books = ComicBook.objects.order_by('?')[:5]    
+    context["comic_books"] = comic_books
+    return render(request, 'index.html', context)

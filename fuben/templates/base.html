@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>fuben</title>
+    <link href="/static/arkui.css" rel="stylesheet">
+    <link href="/static/docs.css" rel="stylesheet">
+    <link href="/static/style.css" rel="stylesheet">
+</head>
+
+<body>
+{%block header%}
+
+<header id="header">
+    <div class="inner">
+        <h1>福本小站</h1><h2>本站仅向福本伸行先生致敬</h2>
+    </div>
+
+</header>
+<div class="nav nav-store">
+    <div class="inner">
+        <ul class="items">
+        <li><a href="#typography">首页</a></li>
+        
+        <li><a href="#buttons">漫画</a></li>
+        <li><a href="#tables">动漫</a></li>
+        <li><a href="#forms">电影</a></li></ul>
+
+        <ul class="items items-minor">
+            <li><a href="#">关于福本</a></li>
+            <li><a href="#">本站</a></li>
+        </ul>
+    </div>
+</div>
+{%endblock%}
+
+<div class="container">
+
+<article class="col col9"><section>
+    <div class="hd">
+        <h3>漫画推荐<!-- <code></code> --></h3>
+    </div>
+    <div class="bd">
+        <ul class="list-col list-col5">
+        {%for cb in comic_books%}
+            <li><img src="{{cb.original_cover_url}}"></li>
+        {%endfor%}
+        </ul>
+    </div>
+</section></article>
+
+</div><!-- end of container -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
+
