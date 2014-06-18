@@ -44,7 +44,7 @@
     <div class="bd">
         <ul class="list-col list-col5">
         {%for cb in comic_books%}
-            <li><img src="{{cb.original_cover_url}}"></li>
+            <li><img src="{{cb.cover.url}}"></li>
         {%endfor%}
         </ul>
     </div>

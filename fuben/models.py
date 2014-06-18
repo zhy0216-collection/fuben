@@ -37,6 +37,7 @@ class ComicBook(models.Model):
     volume_count                = models.IntegerField(default=0)
     des                         = models.TextField()
     
+    cover                       = models.ImageField(upload_to='cover')
     original_cover_url          = models.CharField(max_length=120)
     upyun_cover_url             = models.CharField(max_length=120)
     original_link               = models.CharField(max_length=120)
